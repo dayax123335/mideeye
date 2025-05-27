@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mideeye - Share Your Moments</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar animate-slide-in">
+        <div class="nav-container">
+            <a href="./index.html" class="logo">Mideeye</a>
+            <ul class="nav-links auth-required">
+                <li><a href="./index.html" data-nav="home" class="active">Home</a></li>
+                <li><a href="./explore.html" data-nav="explore">Explore</a></li>
+                <li><a href="./upload.html" data-nav="upload">Upload</a></li>
+                <li><a href="./profile.html" data-nav="profile">Profile</a></li>
+            </ul>
+            <ul class="nav-links auth-not-required">
+                <li><a href="./login.html" class="btn btn-text">Sign In</a></li>
+                <li><a href="./signup.html" class="btn btn-primary">Sign Up</a></li>
+            </ul>
+            <button class="mobile-menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav auth-required">
+        <a href="./index.html" data-nav="home" class="active"><i class="fas fa-home"></i> Home</a>
+        <a href="./explore.html" data-nav="explore"><i class="fas fa-search"></i> Explore</a>
+        <a href="./upload.html" data-nav="upload"><i class="fas fa-upload"></i> Upload</a>
+        <a href="./profile.html" data-nav="profile"><i class="fas fa-user"></i> Profile</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>Share Your Story</h1>
+                <p class="hero-subtitle">Join millions of creators sharing their moments on Mideeye</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-users"></i>
+                        <span class="stat-value">2M+</span>
+                        <span class="stat-label">Users</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-video"></i>
+                        <span class="stat-value">5M+</span>
+                        <span class="stat-label">Videos</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-heart"></i>
+                        <span class="stat-value">10M+</span>
+                        <span class="stat-label">Likes</span>
+                    </div>
+                </div>
+                <div class="hero-actions auth-not-required">
+                    <a href="./signup.html" class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i>
+                        Get Started
+                    </a>
+                    <a href="./login.html" class="btn btn-secondary">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Sign In
+                    </a>
+                </div>
+                <div class="hero-actions auth-required">
+                    <a href="./explore.html" class="btn btn-primary">
+                        <i class="fas fa-compass"></i>
+                        Start Exploring
+                    </a>
+                    <a href="./upload.html" class="btn btn-secondary">
+                        <i class="fas fa-upload"></i>
+                        Share a Video
+                    </a>
+                </div>
+            </div>
+            <div class="featured-content">
+                <h2>Featured Content</h2>
+                <div class="featured-grid">
+                    <!-- Featured Video -->
+                    <div class="featured-item video-post">
+                        <video src="https://assets.mixkit.co/videos/preview/mixkit-tree-with-yellow-flowers-1173-large.mp4" 
+                               poster="https://picsum.photos/400/600?random=1"
+                               loop muted></video>
+                        <div class="featured-overlay">
+                            <div class="creator-info">
+                                <img src="https://i.pravatar.cc/150?img=1" alt="Creator">
+                                <span>@nature_lover</span>
+                            </div>
+                            <div class="post-stats">
+                                <span><i class="fas fa-heart"></i> 12.5k</span>
+                                <span><i class="fas fa-comment"></i> 234</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Featured Image -->
+                    <div class="featured-item">
+                        <img src="https://picsum.photos/400/600?random=2" alt="Featured post">
+                        <div class="featured-overlay">
+                            <div class="creator-info">
+                                <img src="https://i.pravatar.cc/150?img=2" alt="Creator">
+                                <span>@artistry</span>
+                            </div>
+                            <div class="post-stats">
+                                <span><i class="fas fa-heart"></i> 8.9k</span>
+                                <span><i class="fas fa-comment"></i> 156</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Featured Video -->
+                    <div class="featured-item video-post">
+                        <video src="https://assets.mixkit.co/videos/preview/mixkit-waves-in-the-water-1164-large.mp4" 
+                               poster="https://picsum.photos/400/600?random=3"
+                               loop muted></video>
+                        <div class="featured-overlay">
+                            <div class="creator-info">
+                                <img src="https://i.pravatar.cc/150?img=3" alt="Creator">
+                                <span>@ocean_vibes</span>
+                            </div>
+                            <div class="post-stats">
+                                <span><i class="fas fa-heart"></i> 15.2k</span>
+                                <span><i class="fas fa-comment"></i> 342</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html> 

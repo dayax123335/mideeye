@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Mideeye</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar animate-slide-in">
+        <div class="nav-container">
+            <a href="./index.html" class="logo">Mideeye</a>
+            <ul class="nav-links auth-required">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./explore.html">Explore</a></li>
+                <li><a href="./upload.html">Upload</a></li>
+                <li><a href="./profile.html">Profile</a></li>
+            </ul>
+            <ul class="nav-links auth-not-required">
+                <li><a href="./login.html" class="btn btn-text">Sign In</a></li>
+                <li><a href="./signup.html" class="btn btn-primary">Sign Up</a></li>
+            </ul>
+            <button class="mobile-menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav auth-required">
+        <a href="./index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="./explore.html"><i class="fas fa-search"></i> Explore</a>
+        <a href="./upload.html"><i class="fas fa-upload"></i> Upload</a>
+        <a href="./profile.html"><i class="fas fa-user"></i> Profile</a>
+    </nav>
+
+    <!-- Mobile Navigation for Non-Auth -->
+    <nav class="mobile-nav auth-not-required">
+        <a href="./login.html"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+        <a href="./signup.html"><i class="fas fa-user-plus"></i> Sign Up</a>
+    </nav>
+
+    <main class="container">
+        <div class="legal-content">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last Updated: March 2024</p>
+
+            <section>
+                <h2>1. Information We Collect</h2>
+                <p>We collect information you provide directly to us:</p>
+                <ul>
+                    <li>Account information (name, email, username)</li>
+                    <li>Profile information (avatar, bio)</li>
+                    <li>Content you post (videos, comments, likes)</li>
+                    <li>Communications with us</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>2. How We Use Your Information</h2>
+                <p>We use the collected information to:</p>
+                <ul>
+                    <li>Provide and maintain our services</li>
+                    <li>Process your transactions</li>
+                    <li>Send you service-related notifications</li>
+                    <li>Improve our services</li>
+                    <li>Protect against fraud and abuse</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Information Sharing</h2>
+                <p>We do not sell your personal information. We may share your information:</p>
+                <ul>
+                    <li>With your consent</li>
+                    <li>To comply with legal obligations</li>
+                    <li>To protect our rights and safety</li>
+                    <li>With service providers who assist our operations</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Data Security</h2>
+                <p>We implement appropriate security measures to protect your personal information. However, no method of transmission over the Internet is 100% secure.</p>
+            </section>
+
+            <section>
+                <h2>5. Your Rights</h2>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Access your personal information</li>
+                    <li>Correct inaccurate data</li>
+                    <li>Request deletion of your data</li>
+                    <li>Object to processing of your data</li>
+                    <li>Export your data</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>6. Cookies</h2>
+                <p>We use cookies and similar technologies to enhance your experience. You can control cookie settings through your browser.</p>
+            </section>
+
+            <section>
+                <h2>7. Children's Privacy</h2>
+                <p>Our service is not directed to children under 13. We do not knowingly collect information from children under 13.</p>
+            </section>
+
+            <section>
+                <h2>8. Changes to Privacy Policy</h2>
+                <p>We may update this privacy policy from time to time. We will notify you of any changes by posting the new policy on this page.</p>
+            </section>
+
+            <section>
+                <h2>9. Contact Us</h2>
+                <p>For questions about this Privacy Policy, please contact us at privacy@mideeye.com</p>
+            </section>
+
+            <footer class="legal-footer">
+                <div class="legal-footer-links">
+                    <a href="./privacy.html">Privacy Policy</a>
+                    <a href="./terms.html">Terms of Service</a>
+                    <a href="./index.html">Home</a>
+                    <a href="mailto:privacy@mideeye.com">Contact</a>
+                </div>
+                <div class="legal-footer-copyright">
+                    © 2024 Mideeye. All rights reserved.
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/auth.js"></script>
+</body>
+</html> 

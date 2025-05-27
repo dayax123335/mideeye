@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore - Mideeye App</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome for better icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar animate-slide-in">
+        <div class="nav-container">
+            <a href="./index.html" class="logo">Mideeye</a>
+            <ul class="nav-links auth-required">
+                <li><a href="./index.html" data-nav="home">Home</a></li>
+                <li><a href="./explore.html" data-nav="explore" class="active">Explore</a></li>
+                <li><a href="./upload.html" data-nav="upload">Upload</a></li>
+                <li><a href="./profile.html" data-nav="profile">Profile</a></li>
+            </ul>
+            <ul class="nav-links auth-not-required">
+                <li><a href="./login.html" class="btn btn-text">Sign In</a></li>
+                <li><a href="./signup.html" class="btn btn-primary">Sign Up</a></li>
+            </ul>
+            <button class="mobile-menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav auth-required">
+        <a href="./index.html" data-nav="home"><i class="fas fa-home"></i> Home</a>
+        <a href="./explore.html" data-nav="explore" class="active"><i class="fas fa-search"></i> Explore</a>
+        <a href="./upload.html" data-nav="upload"><i class="fas fa-upload"></i> Upload</a>
+        <a href="./profile.html" data-nav="profile"><i class="fas fa-user"></i> Profile</a>
+    </nav>
+
+    <!-- Mobile Navigation for Non-Auth -->
+    <nav class="mobile-nav auth-not-required">
+        <a href="./login.html"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+        <a href="./signup.html"><i class="fas fa-user-plus"></i> Sign Up</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="explore-header">
+            <h1>Explore</h1>
+            <div class="explore-filters">
+                <button class="btn btn-primary active">For You</button>
+                <button class="btn btn-secondary">Following</button>
+                <button class="btn btn-secondary">Trending</button>
+            </div>
+        </div>
+
+        <!-- Video Feed -->
+        <div class="video-feed">
+            <!-- Post 1 -->
+            <div class="feed-post">
+                <div class="post-video-container">
+                    <video src="https://assets.mixkit.co/videos/preview/mixkit-tree-with-yellow-flowers-1173-large.mp4" 
+                           loop muted playsinline
+                           poster="https://picsum.photos/400/600?random=1"></video>
+                    <div class="post-overlay">
+                        <div class="post-actions">
+                            <button class="action-btn like-btn" title="Like">
+                                <i class="fas fa-heart"></i>
+                                <span>45.2K</span>
+                            </button>
+                            <button class="action-btn comment-btn" title="Comment">
+                                <i class="fas fa-comment"></i>
+                                <span>1.2K</span>
+                            </button>
+                            <button class="action-btn share-btn" title="Share">
+                                <i class="fas fa-share"></i>
+                                <span>Share</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-info">
+                    <div class="post-user">
+                        <img src="https://i.pravatar.cc/150?img=1" alt="@naturelover">
+                        <div class="user-details">
+                            <h3>@naturelover</h3>
+                            <p>🌸 Spring vibes in full bloom! #nature #spring</p>
+                        </div>
+                        <button class="btn btn-primary follow-btn">Follow</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 2 -->
+            <div class="feed-post">
+                <div class="post-video-container">
+                    <video src="https://assets.mixkit.co/videos/preview/mixkit-waves-in-the-water-1164-large.mp4" 
+                           loop muted playsinline
+                           poster="https://picsum.photos/400/600?random=2"></video>
+                    <div class="post-overlay">
+                        <div class="post-actions">
+                            <button class="action-btn like-btn" title="Like">
+                                <i class="fas fa-heart"></i>
+                                <span>32.1K</span>
+                            </button>
+                            <button class="action-btn comment-btn" title="Comment">
+                                <i class="fas fa-comment"></i>
+                                <span>856</span>
+                            </button>
+                            <button class="action-btn share-btn" title="Share">
+                                <i class="fas fa-share"></i>
+                                <span>Share</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-info">
+                    <div class="post-user">
+                        <img src="https://i.pravatar.cc/150?img=2" alt="@oceanvibes">
+                        <div class="user-details">
+                            <h3>@oceanvibes</h3>
+                            <p>🌊 Ocean therapy #beach #waves #summer</p>
+                        </div>
+                        <button class="btn btn-primary follow-btn">Follow</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Post 3 -->
+            <div class="feed-post">
+                <div class="post-video-container">
+                    <video src="https://assets.mixkit.co/videos/preview/mixkit-young-woman-practicing-yoga-in-a-park-4377-large.mp4" 
+                           loop muted playsinline
+                           poster="https://picsum.photos/400/600?random=3"></video>
+                    <div class="post-overlay">
+                        <div class="post-actions">
+                            <button class="action-btn like-btn" title="Like">
+                                <i class="fas fa-heart"></i>
+                                <span>28.9K</span>
+                            </button>
+                            <button class="action-btn comment-btn" title="Comment">
+                                <i class="fas fa-comment"></i>
+                                <span>723</span>
+                            </button>
+                            <button class="action-btn share-btn" title="Share">
+                                <i class="fas fa-share"></i>
+                                <span>Share</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-info">
+                    <div class="post-user">
+                        <img src="https://i.pravatar.cc/150?img=3" alt="@yogalife">
+                        <div class="user-details">
+                            <h3>@yogalife</h3>
+                            <p>🧘‍♀️ Morning yoga routine #wellness #mindfulness</p>
+                        </div>
+                        <button class="btn btn-primary follow-btn">Follow</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html> 

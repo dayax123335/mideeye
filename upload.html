@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Video - Mideeye</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="./index.html" class="logo">Mideeye</a>
+            <ul class="nav-links">
+                <li><a href="./index.html" data-nav="home">Home</a></li>
+                <li><a href="./explore.html" data-nav="explore">Explore</a></li>
+                <li><a href="./upload.html" data-nav="upload" class="active">Upload</a></li>
+                <li><a href="./profile.html" data-nav="profile">Profile</a></li>
+            </ul>
+            <button class="mobile-menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <a href="./index.html" data-nav="home">🏠 Home</a>
+        <a href="./explore.html" data-nav="explore">🔍 Explore</a>
+        <a href="./upload.html" data-nav="upload" class="active">📤 Upload</a>
+        <a href="./profile.html" data-nav="profile">👤 Profile</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="upload-container">
+            <div class="upload-header">
+                <h1>Share a Video</h1>
+                <p>Share your moments with the world</p>
+            </div>
+
+            <form id="uploadForm" class="upload-form">
+                <!-- Upload Area -->
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-preview">
+                        <video id="videoPreview" style="display: none;" controls></video>
+                        <div id="uploadPlaceholder">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Drag and drop your video here</p>
+                            <span>or</span>
+                            <label for="fileInput" class="btn btn-primary">Choose File</label>
+                            <input type="file" id="fileInput" accept="video/*" hidden>
+                            <p class="upload-info">Maximum file size: 100MB</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Caption Area -->
+                <div class="caption-area">
+                    <label for="caption">Write a caption</label>
+                    <textarea 
+                        id="caption" 
+                        placeholder="What's on your mind?"
+                        maxlength="500"
+                        required></textarea>
+                    <div class="caption-footer">
+                        <span class="char-count">0/500</span>
+                        <div class="caption-tools">
+                            <button type="button" class="tool-btn" title="Add emoji">
+                                <i class="far fa-smile"></i>
+                            </button>
+                            <button type="button" class="tool-btn" title="Add hashtag">
+                                <i class="fas fa-hashtag"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upload Progress -->
+                <div class="upload-progress" style="display: none;">
+                    <div class="progress-info">
+                        <span>Uploading...</span>
+                        <span class="progress-percentage">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill"></div>
+                    </div>
+                </div>
+
+                <!-- Success Message -->
+                <div class="upload-success" style="display: none;">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Upload successful!</h3>
+                    <p>Your video will be available shortly</p>
+                </div>
+
+                <!-- Error Message -->
+                <div class="auth-error" style="display: none;">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span></span>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelUpload">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="submitUpload">
+                        <span>Share Now</span>
+                        <div class="spinner" style="display: none;"></div>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module">
+        // Handle drag and drop
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const videoPreview = document.getElementById('videoPreview');
+        const uploadPlaceholder = document.getElementById('uploadPlaceholder');
+        const caption = document.getElementById('caption');
+        const charCount = document.querySelector('.char-count');
+        const cancelButton = document.getElementById('cancelUpload');
+
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, () => {
+                uploadArea.classList.add('highlight');
+            });
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            uploadArea.addEventListener(eventName, () => {
+                uploadArea.classList.remove('highlight');
+            });
+        });
+
+        uploadArea.addEventListener('drop', handleDrop);
+
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const file = dt.files[0];
+            handleFile(file);
+        }
+
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            handleFile(file);
+        });
+
+        function handleFile(file) {
+            if (file && file.type.startsWith('video/')) {
+                const videoUrl = URL.createObjectURL(file);
+                videoPreview.src = videoUrl;
+                videoPreview.style.display = 'block';
+                uploadPlaceholder.style.display = 'none';
+            } else {
+                const errorDiv = document.querySelector('.auth-error');
+                const errorText = errorDiv.querySelector('span');
+                errorText.textContent = 'Please select a valid video file';
+                errorDiv.style.display = 'flex';
+                setTimeout(() => {
+                    errorDiv.style.display = 'none';
+                }, 3000);
+            }
+        }
+
+        // Handle caption character count
+        caption.addEventListener('input', () => {
+            const length = caption.value.length;
+            charCount.textContent = `${length}/500`;
+        });
+
+        // Handle cancel button
+        cancelButton.addEventListener('click', () => {
+            if (confirm('Are you sure you want to cancel this upload?')) {
+                window.location.href = './index.html';
+            }
+        });
+    </script>
+</body>
+</html> 

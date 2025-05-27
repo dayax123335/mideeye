@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Mideeye</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar animate-slide-in">
+        <div class="nav-container">
+            <a href="./index.html" class="logo">Mideeye</a>
+            <ul class="nav-links auth-required">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./explore.html">Explore</a></li>
+                <li><a href="./upload.html">Upload</a></li>
+                <li><a href="./profile.html">Profile</a></li>
+            </ul>
+            <ul class="nav-links auth-not-required">
+                <li><a href="./login.html" class="btn btn-text">Sign In</a></li>
+                <li><a href="./signup.html" class="btn btn-primary">Sign Up</a></li>
+            </ul>
+            <button class="mobile-menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav auth-required">
+        <a href="./index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="./explore.html"><i class="fas fa-search"></i> Explore</a>
+        <a href="./upload.html"><i class="fas fa-upload"></i> Upload</a>
+        <a href="./profile.html"><i class="fas fa-user"></i> Profile</a>
+    </nav>
+
+    <!-- Mobile Navigation for Non-Auth -->
+    <nav class="mobile-nav auth-not-required">
+        <a href="./login.html"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+        <a href="./signup.html"><i class="fas fa-user-plus"></i> Sign Up</a>
+    </nav>
+
+    <main class="container">
+        <div class="legal-content">
+            <h1>Terms of Service</h1>
+            <p class="last-updated">Last Updated: March 2024</p>
+
+            <section>
+                <h2>1. Acceptance of Terms</h2>
+                <p>By accessing and using Mideeye, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.</p>
+            </section>
+
+            <section>
+                <h2>2. User Accounts</h2>
+                <p>To use certain features of Mideeye, you must register for an account. You agree to:</p>
+                <ul>
+                    <li>Provide accurate and complete information</li>
+                    <li>Maintain the security of your account credentials</li>
+                    <li>Promptly update any changes to your information</li>
+                    <li>Accept responsibility for all activities under your account</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Content Guidelines</h2>
+                <p>Users are responsible for the content they post. Content must not:</p>
+                <ul>
+                    <li>Violate any laws or regulations</li>
+                    <li>Infringe on intellectual property rights</li>
+                    <li>Contain harmful or malicious code</li>
+                    <li>Include explicit or inappropriate material</li>
+                    <li>Harass, bully, or discriminate against others</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Intellectual Property</h2>
+                <p>Users retain ownership of their content but grant Mideeye a license to use, modify, and display the content for service operation purposes.</p>
+            </section>
+
+            <section>
+                <h2>5. Termination</h2>
+                <p>We reserve the right to terminate or suspend accounts at our discretion, without prior notice, for violations of these terms or for any other reason.</p>
+            </section>
+
+            <section>
+                <h2>6. Limitation of Liability</h2>
+                <p>Mideeye is provided "as is" without warranties of any kind. We are not liable for any damages arising from the use of our service.</p>
+            </section>
+
+            <section>
+                <h2>7. Changes to Terms</h2>
+                <p>We reserve the right to modify these terms at any time. Users will be notified of significant changes.</p>
+            </section>
+
+            <section>
+                <h2>8. Contact</h2>
+                <p>For questions about these Terms of Service, please contact us at support@mideeye.com</p>
+            </section>
+
+            <footer class="legal-footer">
+                <div class="legal-footer-links">
+                    <a href="./privacy.html">Privacy Policy</a>
+                    <a href="./terms.html">Terms of Service</a>
+                    <a href="./index.html">Home</a>
+                    <a href="mailto:support@mideeye.com">Contact</a>
+                </div>
+                <div class="legal-footer-copyright">
+                    © 2024 Mideeye. All rights reserved.
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/auth.js"></script>
+</body>
+</html> 

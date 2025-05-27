@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Mideeye App</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar animate-slide-in">
+        <div class="nav-container">
+            <a href="./index.html" class="logo">Mideeye</a>
+            <ul class="nav-links auth-required">
+                <li><a href="./index.html" data-nav="home">Home</a></li>
+                <li><a href="./explore.html" data-nav="explore">Explore</a></li>
+                <li><a href="./upload.html" data-nav="upload">Upload</a></li>
+                <li><a href="./profile.html" data-nav="profile" class="active">Profile</a></li>
+            </ul>
+            <ul class="nav-links auth-not-required">
+                <li><a href="./login.html" class="btn btn-text">Sign In</a></li>
+                <li><a href="./signup.html" class="btn btn-primary">Sign Up</a></li>
+            </ul>
+            <button class="mobile-menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav auth-required">
+        <a href="./index.html" data-nav="home"><i class="fas fa-home"></i> Home</a>
+        <a href="./explore.html" data-nav="explore"><i class="fas fa-search"></i> Explore</a>
+        <a href="./upload.html" data-nav="upload"><i class="fas fa-upload"></i> Upload</a>
+        <a href="./profile.html" data-nav="profile" class="active"><i class="fas fa-user"></i> Profile</a>
+    </nav>
+
+    <!-- Mobile Navigation for Non-Auth -->
+    <nav class="mobile-nav auth-not-required">
+        <a href="./login.html"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+        <a href="./signup.html"><i class="fas fa-user-plus"></i> Sign Up</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="profile-header-container animate-fade-in">
+            <div class="profile-cover"></div>
+            <div class="profile-avatar-wrapper">
+                <img src="https://i.pravatar.cc/300" alt="Profile Picture" class="profile-avatar">
+                <button class="edit-avatar-btn" title="Change profile picture">
+                    <i class="fas fa-camera"></i>
+                </button>
+            </div>
+            <div class="profile-info">
+                <div class="profile-name-section animate-slide-in">
+                    <div>
+                        <h1>Sarah Parker</h1>
+                        <span class="username">@sarahcreates</span>
+                    </div>
+                    <button class="btn btn-primary edit-profile-btn">
+                        <i class="fas fa-edit"></i>
+                        Edit Profile
+                    </button>
+                </div>
+                <p class="bio animate-fade-in">
+                    📸 Digital Creator | Visual Storyteller<br>
+                    🎨 Sharing moments that inspire<br>
+                    🌍 Based in New York
+                </p>
+                <div class="profile-stats animate-slide-in">
+                    <div class="stat-item">
+                        <span class="stat-value">248</span>
+                        <span class="stat-label">Posts</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">15.4K</span>
+                        <span class="stat-label">Followers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">892</span>
+                        <span class="stat-label">Following</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-content animate-fade-in">
+            <div class="content-tabs">
+                <button class="tab-btn active" data-tab="posts">
+                    <i class="fas fa-th"></i>
+                    Posts
+                </button>
+                <button class="tab-btn" data-tab="videos">
+                    <i class="fas fa-video"></i>
+                    Videos
+                </button>
+                <button class="tab-btn" data-tab="saved">
+                    <i class="fas fa-bookmark"></i>
+                    Saved
+                </button>
+            </div>
+
+            <div class="posts-grid">
+                <!-- Video Post -->
+                <div class="post-item video-post">
+                    <video src="https://assets.mixkit.co/videos/preview/mixkit-tree-with-yellow-flowers-1173-large.mp4" 
+                           loop muted webkit-playsinline
+                           poster="https://picsum.photos/400/400?random=1"></video>
+                    <div class="post-overlay">
+                        <div class="post-stats">
+                            <span><i class="fas fa-heart"></i> 2.4K</span>
+                            <span><i class="fas fa-comment"></i> 89</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Post -->
+                <div class="post-item">
+                    <img src="https://picsum.photos/400/400?random=2" alt="Post">
+                    <div class="post-overlay">
+                        <div class="post-stats">
+                            <span><i class="fas fa-heart"></i> 1.8K</span>
+                            <span><i class="fas fa-comment"></i> 56</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Post -->
+                <div class="post-item video-post">
+                    <video src="https://assets.mixkit.co/videos/preview/mixkit-waves-in-the-water-1164-large.mp4"
+                           loop muted webkit-playsinline
+                           poster="https://picsum.photos/400/400?random=3"></video>
+                    <div class="post-overlay">
+                        <div class="post-stats">
+                            <span><i class="fas fa-heart"></i> 3.2K</span>
+                            <span><i class="fas fa-comment"></i> 124</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Posts -->
+                <div class="post-item">
+                    <img src="https://picsum.photos/400/400?random=4" alt="Post">
+                    <div class="post-overlay">
+                        <div class="post-stats">
+                            <span><i class="fas fa-heart"></i> 2.1K</span>
+                            <span><i class="fas fa-comment"></i> 78</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="post-item">
+                    <img src="https://picsum.photos/400/400?random=5" alt="Post">
+                    <div class="post-overlay">
+                        <div class="post-stats">
+                            <span><i class="fas fa-heart"></i> 1.5K</span>
+                            <span><i class="fas fa-comment"></i> 45</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Post -->
+                <div class="post-item video-post">
+                    <video src="https://assets.mixkit.co/videos/preview/mixkit-young-woman-practicing-yoga-in-a-park-4377-large.mp4"
+                           loop muted webkit-playsinline
+                           poster="https://picsum.photos/400/400?random=6"></video>
+                    <div class="post-overlay">
+                        <div class="post-stats">
+                            <span><i class="fas fa-heart"></i> 4.7K</span>
+                            <span><i class="fas fa-comment"></i> 156</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/theme.js"></script>
+</body>
+</html> 
